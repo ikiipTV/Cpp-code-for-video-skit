@@ -1,0 +1,106 @@
+#include<bits/stdc.h>
+//using the wcm++ library in c++
+//create various functions to be used for the vidoe skits in Scenes
+//global variables
+
+string _introductory_message ="welcome to ikiip Repo";
+string _about_us = "This is a tutorial on wcm for c++";
+int ihour;
+int iminutes;
+int iseconds;
+
+//set the time variables and calculate accordingly
+iseconds = 60;
+iminutes = 60*60;
+ihour = 3600 * 60;
+//these time functions might not be used, but for knowledge purposes.
+
+void Scene1(){
+	Play("c:\\swang.wav");
+	Image Background("back.png");
+	Background.SetVisible(true);
+	Text Introtext("_introductory_message");
+	Introtext.SetVisible(true);
+	Introtext.SetFont("tw cen mt");
+	Introtext.SetColor("#000000");
+	Introtext.SetTransparency(0);
+
+	//set time to fade
+	SetTime(3.0);
+	//Disable the Introtext
+	Introtext.SetVisible(false);
+	//start the second sub-scene1
+
+	Text Abouttext("_about_us");
+	Abouttext.SetVisible(true);
+	Abouttext.SetFont("tw cen mt");
+	Abouttext.SetColor("#000000");
+	Abouttext.SetTransparency(0);
+
+	//set time to fade
+	SetTime(5.0);
+	//Disable the About Text
+	Abouttext.SetVisible(false);
+	//start the second Scene
+	//sleep for 5.5 seconds
+	Sleep(5.5)
+}
+
+void Scene2(){
+	Text Introtext2("set your desired text here and use basic text formatting");
+	Introtext.SetVisible(true);
+	Introtext.SetFont("tw cen mt");
+	Introtext.SetColor("#000000");
+	Introtext.SetTransparency(0);
+
+	//set time to fade
+	SetTime(3.0);
+	//Disable the Introtext
+	Introtext.SetVisible(false);
+	//start the second sub-scene1
+
+	Text Abouttext("continue wih your desired text");
+	Abouttext.SetVisible(true);
+	Abouttext.SetFont("tw cen mt");
+	Abouttext.SetColor("#000000");
+	Abouttext.SetTransparency(0);
+
+	//set time to fade
+	SetTime(5.0);
+	//Disable the About Text
+	Abouttext.SetVisible(false);
+	//start the second Scene
+	//sleep for 5.5 seconds
+	Sleep(5.5)
+}
+
+//the third Scene shows how to position images and objects at different positions
+//the graph spans from 0-400 above and below
+
+void Scene3(){
+	//here we'll take a demo image and make it span or float
+	//from the top right to left and then fade away.
+	Image Ball("ball.jpeg");
+	Ball.SetVisible(true);
+	Ball.SetPos(0,400);
+
+	//set the time for first movement
+	//firstl calculate the totl time in scene1 &scene2
+	//(3.0+5.0+5.5)*2 = 27
+	SetTime(29.0)
+	//we took two seconds ahead
+	Ball.SetPos(0,200);
+	SetTime(31.0);
+
+	Ball.SetPos(0,100);
+	SetTime(33.0);
+
+	Ball.SetPos(0,-200);
+	SetTime(35.0);
+
+	ball.SetPos(0,-400);
+	SetTime(37.0);
+	//we used a time difference of 2.
+	Sleep(20)
+	//Sleep for 20 seconds before end of video.
+}
